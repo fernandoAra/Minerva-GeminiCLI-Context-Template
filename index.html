@@ -3,34 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your App Name] — Minerva University</title>
+    <title>Transcript &amp; School Documents Navigator — Minerva University</title>
+    <meta
+        name="description"
+        content="A plain-language helper for applicants and counselors to identify likely school documents, submitter responsibilities, and common blockers."
+    >
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>[Your App Name]</h1>
-            <p class="subtitle">[One-sentence purpose]</p>
+    <header class="site-header">
+        <div class="container hero">
+            <p class="eyebrow">Minerva admissions helper</p>
+            <h1>Transcript &amp; School Documents Navigator</h1>
+            <p class="subtitle">
+                A calm, plain-language guide to help applicants and school counselors figure out
+                which school documents may still be needed, who likely needs to send them, and
+                where applications often get stuck.
+            </p>
+
+            <div class="hero-grid" aria-label="Key benefits">
+                <article class="hero-card">
+                    <h2>Who it is for</h2>
+                    <p>Applicants, counselors, and school officials who want a fast first pass before checking official requirements.</p>
+                </article>
+                <article class="hero-card">
+                    <h2>What it helps with</h2>
+                    <p>Likely document lists, likely submitter roles, missing-record risks, and next-step prompts you can act on immediately.</p>
+                </article>
+                <article class="hero-card">
+                    <h2>What it does not do</h2>
+                    <p>It does not make admissions decisions and it does not replace official Minerva admissions guidance.</p>
+                </article>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Students will build their app here -->
-        <section id="app-placeholder">
-            <h2>Ready to start?</h2>
-            <p>Tell Gemini what your first milestone is, or ask: "What should we build first for [App Name]?"</p>
+    <main class="container site-main">
+        <section class="notice-strip" aria-labelledby="notice-title">
+            <article class="notice-card">
+                <h2 id="notice-title">Before you start</h2>
+                <p>
+                    This tool is a helper, not an official admissions policy or decision tool.
+                    Use it to organize questions and spot likely missing records, then verify every
+                    requirement against official Minerva admissions guidance.
+                </p>
+            </article>
+            <article class="notice-card">
+                <h2>Privacy note</h2>
+                <p>
+                    Do not enter names, grades, IDs, or uploaded files here. This app saves only
+                    non-sensitive progress and checklist state in this browser.
+                </p>
+            </article>
         </section>
+
+        <section class="overview-section" aria-labelledby="overview-title">
+            <div class="section-heading">
+                <p class="eyebrow">What you get</p>
+                <h2 id="overview-title">A fast way to narrow the document path</h2>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Likely required documents</h3>
+                    <p>See which transcript groups or exam records may still matter based on a few branching questions.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Likely submitter</h3>
+                    <p>Clarify whether the next move likely belongs to the applicant, a counselor, or another school official.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Common blockers</h3>
+                    <p>Catch missing previous-school records, unclear upload ownership, and incomplete-status confusion before you leave.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel navigator-shell" aria-labelledby="navigator-title">
+            <div class="navigator-header">
+                <div>
+                    <p class="eyebrow">Interactive flow</p>
+                    <h2 id="navigator-title">Find your likely document path</h2>
+                </div>
+                <button id="start-over-button" class="ghost-button" type="button" hidden>Start over</button>
+            </div>
+
+            <div class="status-strip" aria-live="polite">
+                <div>
+                    <p id="progress-label" class="status-label">Choose a role to begin.</p>
+                    <p id="save-status" class="status-note">Progress is saved only on this device.</p>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                    <span id="progress-fill" class="progress-fill"></span>
+                </div>
+            </div>
+
+            <div id="app-root" class="app-root"></div>
+        </section>
+
+        <noscript>
+            <section class="panel">
+                <h2>JavaScript is required</h2>
+                <p>This navigator needs JavaScript for the question flow, local progress saving, and the printable checklist.</p>
+            </section>
+        </noscript>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container footer-content">
-            <div class="copyright">
-                &copy; 2026 Minerva University Student Project
+            <div class="footer-note">
+                <p class="footer-title">Verify official requirements</p>
+                <p>
+                    Replace this text with the final official admissions link before launch, and
+                    always confirm the current Minerva requirements before acting on this summary.
+                </p>
             </div>
-            <!-- MANDATORY AI DISCLOSURE (per Minerva Guardrails) -->
             <div class="ai-disclosure">
                 <span class="badge">AI-Assisted</span>
-                Developed with Gemini CLI & Minerva AI Framework
+                Built with Codex and reviewed under Minerva AI guardrails
             </div>
         </div>
     </footer>

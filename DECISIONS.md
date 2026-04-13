@@ -44,3 +44,18 @@
 **Trade-offs**: Development may be slower due to mandatory human review and documentation overhead, but the resulting system is more ethical, secure, and aligned with institutional values.
 
 <!-- Add new decisions below, incrementing the number. -->
+
+## Decision 003 — Keep admissions guidance rule-based, local, and explicitly unofficial
+
+**Date**: 2026-04-14
+**Decision**: Build the document navigator as a transparent rule-based questionnaire with static content, local-only persistence, and visible disclaimers that it is a helper rather than official admissions policy.
+**Rationale**: This project needs to be easy to inspect, safe for GitHub Pages, and careful about admissions-specific claims. A plain decision tree keeps the logic readable, avoids storing sensitive data, and makes it obvious where human review is still required.
+**Alternatives considered**: A longer freeform FAQ page with no interaction; a more dynamic scoring or recommendation engine; an AI chat assistant for document guidance
+**Trade-offs**: The questionnaire is less flexible than a richer advisory system and will need manual content updates as policies evolve. In return, the MVP remains understandable, auditable, privacy-safe, and honest about uncertainty.
+
+**Guardrails Alignment**:
+- **Privacy & IP**: No real applicant documents, uploads, or personal data are processed; only non-sensitive local progress state is stored.
+- **Disclosure**: The UI keeps a visible AI-assisted badge, and admissions guidance is labeled as helper content that must be verified against official Minerva requirements.
+- **Responsibility**: The human project owner remains responsible for reviewing admissions wording, maintaining policy accuracy, and approving launch content.
+- **Bias & Trust**: Transparent rules reduce hidden inference and keep edge-case uncertainty visible instead of pretending to provide authoritative decisions.
+- **Values**: Aligns with clarity over cleverness, human agency, and accountable AI use.
