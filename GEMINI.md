@@ -3,9 +3,9 @@
 ## Project Identity
 
 **Name**: Transcript & School Documents Navigator
-**Purpose**: A static helper that walks Minerva applicants and school counselors through a short decision flow so they can identify likely school documents, likely submitter responsibilities, common blockers, and practical next steps.
-**Audience**: Minerva applicants plus counselors and school officials who need a plain-language orientation before checking official admissions requirements.
-**Human context**: This app reduces confusion around transcripts and school-submitted records, helps people catch missing-school edge cases earlier, and supports better human follow-up without pretending to be official admissions policy.
+**Purpose**: A static helper that gives Minerva applicants, counselors, and school officials a structured way to map likely school documents, likely submitter responsibilities, blocker risks, and next-step checklists before checking official admissions requirements.
+**Audience**: Minerva applicants plus counselors and school officials who need a practical, plain-language working summary they can print, save, or use to prepare a better human follow-up conversation.
+**Human context**: This app reduces confusion around transcript paths, school-submitted materials, and incomplete-file situations by turning fuzzy admissions-document questions into a clearer route summary and action plan without pretending to be official policy.
 
 **GitHub repo**: Local project currently cloned from `bhwilkoff/Minerva-GeminiCLI-Context-Template`; update this once the app has its own repository.
 **Live URL**: To be set when the project is published to GitHub Pages
@@ -23,7 +23,7 @@
 ```
 index.html          Main application entry point
 css/styles.css      All styles (mobile-first, custom properties)
-js/app.js           Questionnaire logic, results generation, local storage
+js/app.js           Intake flow, branching questionnaire, results engine, local storage
 SCRATCHPAD.md       Session state, milestone log, open questions
 DECISIONS.md        Architecture decision record (append-only)
 GEMINI.md           This file — project context and standing instructions
@@ -57,6 +57,7 @@ For students with varying technical backgrounds:
 - Append a brief session log entry at the bottom of `SCRATCHPAD.md`
 - Keep the UI explicitly disclosed as AI-assisted
 - Keep the app plainly labeled as a helper, not official admissions policy
+- Prefer static support content over opaque “smart” guidance when the same job can be done more transparently
 
 ---
 
@@ -67,10 +68,10 @@ For students with varying technical backgrounds:
 Before implementing any feature, evaluate it against these criteria. If a feature fails, surface the conflict and propose an alternative that passes before proceeding.
 
 1. **Does it deepen understanding?**
-   The user should leave with better clarity about their likely document path, not just a static answer.
+   The user should leave with better clarity about their likely document path, blocker risks, and handoff responsibilities, not just a static answer.
 
 2. **Does it invite participation, not consumption?**
-   The app should ask users to make choices, compare their situation to the checklist, and verify with official guidance.
+   The app should ask users to make choices, compare their situation to the checklist, and verify the result with official guidance.
 
 3. **Does it support human agency?**
    The app should help applicants and counselors organize next steps without replacing human judgment or official admissions guidance.
@@ -106,6 +107,7 @@ Before implementing any feature, evaluate it against these criteria. If a featur
 - Choose the simpler implementation when two approaches work.
 - Do not add extra product scope beyond the requested MVP.
 - Keep the document logic readable in under 30 seconds.
+- Favor structured checklists, route summaries, FAQs, and glossaries over clever recommendation systems.
 - If admissions content feels too policy-specific to infer safely, mark it for human review instead of overstating certainty.
 
 ### Memory and Continuity

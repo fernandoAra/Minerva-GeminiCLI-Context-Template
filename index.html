@@ -6,103 +6,245 @@
     <title>Transcript &amp; School Documents Navigator — Minerva University</title>
     <meta
         name="description"
-        content="A plain-language helper for applicants and counselors to identify likely school documents, submitter responsibilities, and common blockers."
+        content="A plain-language helper for applicants and counselors to identify likely school documents, submission responsibilities, and common blockers."
     >
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to the navigator</a>
+
     <header class="site-header">
         <div class="container hero">
-            <p class="eyebrow">Minerva admissions helper</p>
-            <h1>Transcript &amp; School Documents Navigator</h1>
-            <p class="subtitle">
-                A calm, plain-language guide to help applicants and school counselors figure out
-                which school documents may still be needed, who likely needs to send them, and
-                where applications often get stuck.
-            </p>
+            <div class="hero-copy">
+                <p class="eyebrow">Minerva admissions helper</p>
+                <h1>Transcript &amp; School Documents Navigator</h1>
+                <p class="subtitle">
+                    A plain-language guide for applicants, counselors, and school officials who
+                    need a calmer way to sort out likely school documents, likely submitter
+                    responsibilities, and the most common reasons an application still looks incomplete.
+                </p>
+            </div>
 
-            <div class="hero-grid" aria-label="Key benefits">
+            <div class="hero-grid" aria-label="Key information">
                 <article class="hero-card">
-                    <h2>Who it is for</h2>
-                    <p>Applicants, counselors, and school officials who want a fast first pass before checking official requirements.</p>
+                    <h2>Who it helps</h2>
+                    <p>Applicants, counselors, and school officials who want a first-pass working summary before checking official Minerva requirements.</p>
                 </article>
                 <article class="hero-card">
-                    <h2>What it helps with</h2>
-                    <p>Likely document lists, likely submitter roles, missing-record risks, and next-step prompts you can act on immediately.</p>
+                    <h2>What you get</h2>
+                    <p>A route summary, likely document list, likely handoff points, blockers to watch, and a printable action checklist.</p>
                 </article>
                 <article class="hero-card">
-                    <h2>What it does not do</h2>
-                    <p>It does not make admissions decisions and it does not replace official Minerva admissions guidance.</p>
+                    <h2>How long it takes</h2>
+                    <p>Usually 2 to 4 minutes. The exact number of questions changes with the school history and the kind of help you need.</p>
                 </article>
             </div>
+
+            <ol class="how-it-works" aria-label="How the tool works">
+                <li>Choose who is using the tool and what kind of help they need.</li>
+                <li>Answer a short set of school-history and submission-path questions.</li>
+                <li>Review a structured summary, then verify it with official Minerva guidance.</li>
+            </ol>
         </div>
     </header>
 
-    <main class="container site-main">
+    <main id="main-content" class="container site-main">
         <section class="notice-strip" aria-labelledby="notice-title">
             <article class="notice-card">
                 <h2 id="notice-title">Before you start</h2>
                 <p>
-                    This tool is a helper, not an official admissions policy or decision tool.
-                    Use it to organize questions and spot likely missing records, then verify every
-                    requirement against official Minerva admissions guidance.
+                    This tool is a helper, not an official admissions policy engine or decision tool.
+                    It is designed to help users prepare better questions and organize likely next steps.
                 </p>
             </article>
             <article class="notice-card">
                 <h2>Privacy note</h2>
                 <p>
-                    Do not enter names, grades, IDs, or uploaded files here. This app saves only
+                    Do not enter names, IDs, grades, or uploaded files here. This app stores only
                     non-sensitive progress and checklist state in this browser.
                 </p>
             </article>
         </section>
 
-        <section class="overview-section" aria-labelledby="overview-title">
-            <div class="section-heading">
-                <p class="eyebrow">What you get</p>
-                <h2 id="overview-title">A fast way to narrow the document path</h2>
-            </div>
-
-            <div class="info-grid">
-                <article class="info-card">
-                    <h3>Likely required documents</h3>
-                    <p>See which transcript groups or exam records may still matter based on a few branching questions.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Likely submitter</h3>
-                    <p>Clarify whether the next move likely belongs to the applicant, a counselor, or another school official.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Common blockers</h3>
-                    <p>Catch missing previous-school records, unclear upload ownership, and incomplete-status confusion before you leave.</p>
-                </article>
-            </div>
-        </section>
-
         <section class="panel navigator-shell" aria-labelledby="navigator-title">
             <div class="navigator-header">
                 <div>
-                    <p class="eyebrow">Interactive flow</p>
-                    <h2 id="navigator-title">Find your likely document path</h2>
+                    <p class="eyebrow">Interactive navigator</p>
+                    <h2 id="navigator-title">Build a likely document path</h2>
                 </div>
                 <button id="start-over-button" class="ghost-button" type="button" hidden>Start over</button>
             </div>
 
             <div class="status-strip" aria-live="polite">
-                <div>
-                    <p id="progress-label" class="status-label">Choose a role to begin.</p>
+                <div class="status-copy">
+                    <p id="progress-label" class="status-label">Choose who you are helping.</p>
+                    <p id="progress-detail" class="status-detail">Usually 8 to 11 short questions, depending on the path.</p>
                     <p id="save-status" class="status-note">Progress is saved only on this device.</p>
                 </div>
-                <div class="progress-track" aria-hidden="true">
-                    <span id="progress-fill" class="progress-fill"></span>
+
+                <div class="status-meta">
+                    <p id="progress-phase" class="phase-pill">Intake</p>
+                    <div class="progress-track" aria-hidden="true">
+                        <span id="progress-fill" class="progress-fill"></span>
+                    </div>
                 </div>
             </div>
 
-            <div id="app-root" class="app-root"></div>
+            <div class="navigator-grid">
+                <div class="navigator-main">
+                    <div id="app-root" class="app-root"></div>
+                </div>
+
+                <aside class="navigator-rail" aria-labelledby="rail-title">
+                    <div id="context-rail" class="rail-root"></div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="support-section" aria-labelledby="limits-title">
+            <div class="section-heading">
+                <p class="eyebrow">Use it well</p>
+                <h2 id="limits-title">What this tool can and cannot tell you</h2>
+            </div>
+
+            <div class="support-grid">
+                <article class="support-card">
+                    <h3>What it can help with</h3>
+                    <ul class="content-list">
+                        <li>Spot likely transcript groups and school-submitted materials.</li>
+                        <li>Clarify whether the next move likely belongs to the applicant or the school.</li>
+                        <li>Surface common blockers such as missing prior-school records or unclear upload ownership.</li>
+                        <li>Turn a confusing situation into a checklist that is easier to review with a human.</li>
+                    </ul>
+                </article>
+
+                <article class="support-card">
+                    <h3>What it cannot confirm</h3>
+                    <ul class="content-list">
+                        <li>The exact official Minerva requirement list for the current cycle.</li>
+                        <li>Whether one specific document definitely satisfies an admissions requirement.</li>
+                        <li>Whether a submitted document has already been accepted by an official system.</li>
+                        <li>Any judgment about admissions decisions, eligibility, or competitiveness.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="support-section" aria-labelledby="confusion-title">
+            <div class="section-heading">
+                <p class="eyebrow">Common confusion</p>
+                <h2 id="confusion-title">Questions people often get stuck on</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>My school says it sent something, but the application still looks incomplete.</summary>
+                    <p>
+                        That often points to a process issue rather than a missing applicant upload.
+                        Confirm who sent the document, when it was sent, and whether the official system expects a different source or file type.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>I changed schools. How do I know which transcript matters?</summary>
+                    <p>
+                        Start by listing each secondary school attended in the recent timeline. This tool assumes a former school may still matter if it falls within the last few years or explains part of the academic record.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>I attended college or university briefly and did not finish. Could that still matter?</summary>
+                    <p>
+                        Possibly. This helper treats any postsecondary history as something worth checking because it may introduce another transcript source, even if the study period was short or incomplete.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>We are not sure whether the school must upload documents directly.</summary>
+                    <p>
+                        That uncertainty alone can block progress. Use the result summary to confirm ownership before spending time requesting the wrong document from the wrong person.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Final results are not out yet. Does that mean the file must stay incomplete?</summary>
+                    <p>
+                        Not necessarily. Some paths rely first on a current transcript or a predicted exam document, then later on final results. This tool can only flag that timing issue as something to verify.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <section class="support-section" aria-labelledby="glossary-title">
+            <div class="section-heading">
+                <p class="eyebrow">Glossary</p>
+                <h2 id="glossary-title">Key terms used in this helper</h2>
+            </div>
+
+            <div class="glossary-grid">
+                <article class="glossary-card">
+                    <h3>Transcript</h3>
+                    <p>A school record showing coursework, grades, or both. This helper uses the term broadly and does not define the official format for Minerva.</p>
+                </article>
+
+                <article class="glossary-card">
+                    <h3>School-submitted document</h3>
+                    <p>A record that may need to come directly from a counselor or school official rather than from the applicant alone.</p>
+                </article>
+
+                <article class="glossary-card">
+                    <h3>Predicted exam documentation</h3>
+                    <p>A school-based record used when final exam results are not yet available. The exact document type should always be verified officially.</p>
+                </article>
+
+                <article class="glossary-card">
+                    <h3>Final results</h3>
+                    <p>The final secondary-school outcome, leaving record, or exam result that may arrive after a current transcript or predicted document.</p>
+                </article>
+
+                <article class="glossary-card">
+                    <h3>Direct upload path</h3>
+                    <p>A submission process where the school, counselor, or official office is expected to send a document directly.</p>
+                </article>
+
+                <article class="glossary-card">
+                    <h3>Incomplete status</h3>
+                    <p>A signal that the application may still be missing a required record, a submission handoff, or a document match in the official system.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="support-section" aria-labelledby="notes-title">
+            <div class="section-heading">
+                <p class="eyebrow">Guidance notes</p>
+                <h2 id="notes-title">Practical notes for each role</h2>
+            </div>
+
+            <div class="notes-grid">
+                <article class="support-card">
+                    <h3>For applicants</h3>
+                    <ul class="content-list">
+                        <li>Write down every school in scope before chasing documents.</li>
+                        <li>Separate “what document exists” from “who is supposed to send it.”</li>
+                        <li>If you are unsure, ask the school to confirm the submission path before uploading replacements.</li>
+                        <li>Use the checklist to prepare for a conversation with admissions or the school, not as a final answer by itself.</li>
+                    </ul>
+                </article>
+
+                <article class="support-card">
+                    <h3>For counselors and school officials</h3>
+                    <ul class="content-list">
+                        <li>Confirm whether the file needs a current transcript, final result, predicted document, or some combination.</li>
+                        <li>Check whether former schools or postsecondary institutions add extra record sources.</li>
+                        <li>Make one person responsible for the official handoff whenever possible.</li>
+                        <li>If the system still shows incomplete after sending records, compare the portal message to the exact document source and send date.</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
         <noscript>
-            <section class="panel">
+            <section class="support-card noscript-card">
                 <h2>JavaScript is required</h2>
                 <p>This navigator needs JavaScript for the question flow, local progress saving, and the printable checklist.</p>
             </section>
@@ -112,10 +254,9 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-note">
-                <p class="footer-title">Verify official requirements</p>
-                <p>
-                    Replace this text with the final official admissions link before launch, and
-                    always confirm the current Minerva requirements before acting on this summary.
+                <p class="footer-title">Verify official requirements before acting</p>
+                <p id="official-guidance-note">
+                    Replace this placeholder with the approved official Minerva admissions page or portal reference before launch.
                 </p>
             </div>
             <div class="ai-disclosure">
